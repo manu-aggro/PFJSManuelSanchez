@@ -1,0 +1,6 @@
+Huertapp es una aplicación que ayuda al usuario a diseñar su huerto. Despues de introducir el valor de la superficie de tierra, el usuario va eligiendo 
+las plantas de temporada que desea plantar, a cada cual va asociada un valor de m2 que se van restando del total de superficie del huerto.
+
+Al final muestra por consola un resumen del huerto.
+
+Me gustaria poder mejorar la aplicación dibujan el huerto pero se escapa a mis conocimiento de momento.
