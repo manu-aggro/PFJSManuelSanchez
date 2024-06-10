@@ -1,71 +1,60 @@
 
-let area;
+let largo;
+let ancho;
 
-function tomarDatos() {
+function tomarLargo() {
 
 
     do {
-        area = parseInt(prompt("Introduce la superficie de tu huerto en metros cuadrados"));
+        largo = parseInt(prompt("Introduce el largo de tu huerto en metros"));
+        
 
-
-    } while (area <= 0);
-    return area;
-    console.log(area)
-
+    } while (largo <= 0);
+    return largo;
 }
 
-let tomate;
-let lechuga;
-let pepino;
-let calabacin;
-
-function sembrar() {
-
-    tomate = parseInt(prompt("Cuantos tomates quieres sembrar?"));
-    area = area - tomate;
-    if (area > 0) {
-
-        lechuga = parseInt(prompt("Todavia tenemos hueco, cuantas lechugas quieres plantar?"));
-        area = area - (lechuga / 4);
-        if (area > 0) {
-
-            pepino = parseInt(prompt("Todavia tenemos hueco, cuantos pepinos quieres plantar?"));
-            area = area - (pepino / 2);
-
-            if (area > 0) {
-
-                calabacin = parseInt(prompt("Todavia tenemos hueco, cuantos calabacines quieres plantar?"));
-                areafinal = area - (calabacin);
+function tomarAncho (){
+    do {
+        ancho = parseInt(prompt("Introduce el ancho de tu huerto en metros"));
 
 
-
-
-            } else {
-                alert("El huerto ya está lleno, lo siento")
-            }
-
-
-
-        } else {
-            alert("El huerto ya está lleno, lo siento")
-        }
-
-
-
-    } else {
-        alert("El huerto ya está lleno, lo siento")
-    }
+    } while (ancho <= 0);
+    return ancho;
+     
 }
 
 function dibujarHuerto() {
-    huerto = [{ "Superficie libre: ": areafinal }, { "Tomates": tomate }, { "Pepinos": pepino }, { "Lechugas": lechuga }, { "Calabacin": calabacin }];
-    for (let i = 0; i < huerto.length; i++) {
-        console.log(huerto[i]);
+    
+    var body = document.getElementsByTagName("body")[0];
+  
+    var tabla = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+  
+    for (var i = 0; i < ancho; i++) {
+      var hilera = document.createElement("tr");
+  
+      for (var j = 0; j < largo; j++) {
+        var celda = document.createElement("td");
+        hilera.appendChild(celda);
+      }
+  
+      tblBody.appendChild(hilera);
     }
-}
+  
+    tabla.appendChild(tblBody);
+    body.appendChild(tabla);
+    const h3 = document.getElementById("subtitulo");
+    const boton = document.getElementById("boton");
+    h3.remove();
+    boton.remove();
+  }
+  
+
+
+
 function start() {
-    tomarDatos();
-    sembrar();
+    tomarLargo();
+    tomarAncho();
     dibujarHuerto();
 
 }

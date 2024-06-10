@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./app/index.js"></script>
+    <script defer src="./app/index.js"></script>
     <title>Huertapp</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body style="display: flex;align-items: center;justify-content: center;flex-direction: column; background-image:url(background.jpg);background-attachment: fixed;
+<body style="display: flex;align-items: center;justify-content: center;flex-direction: column; background-image:url(./assets/background.jpg);background-attachment: fixed;
 background-size: cover;">
     <h1 style="text-align: center;margin-top: 5em; font-family: Georgia, 'Times New Roman', Times, serif;">Huertapp</h1>
-    <h3 style="text-align: center;margin-top: 1em; font-family: Georgia, 'Times New Roman', Times, serif;">La aplicación para crear huertos personalizados</h3>
-    <button onclick="start()" style="text-align: center;">COMENZAR</button>
+    <h3 id="subtitulo" style="text-align: center;margin-top: 1em; font-family: Georgia, 'Times New Roman', Times, serif;">La aplicación para crear huertos personalizados</h3>
+    <button id="boton" onclick="start()" url="" style="text-align: center;">COMENZAR</button>
 </body>
 </html>
