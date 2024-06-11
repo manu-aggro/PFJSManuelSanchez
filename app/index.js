@@ -2,25 +2,9 @@
 let largo;
 let ancho;
 
-function tomarLargo() {
-
-
-    do {
-        largo = parseInt(prompt("Introduce el largo de tu huerto en metros"));
-        
-
-    } while (largo <= 0);
-    return largo;
-}
-
-function tomarAncho (){
-    do {
-        ancho = parseInt(prompt("Introduce el ancho de tu huerto en metros"));
-
-
-    } while (ancho <= 0);
-    return ancho;
-     
+function capturaDatos(){
+  largo = parseInt(document.getElementById("largo").value);
+ ancho = parseInt(document.getElementById("ancho").value);
 }
 
 function dibujarHuerto() {
@@ -44,9 +28,9 @@ function dibujarHuerto() {
     tabla.appendChild(tblBody);
     body.appendChild(tabla);
     const h3 = document.getElementById("subtitulo");
-    const boton = document.getElementById("boton");
+    const form = document.getElementById("form");
     h3.remove();
-    boton.remove();
+    form.remove();
   }
   
 function guardarDatos(){
@@ -59,8 +43,7 @@ function guardarDatos(){
 
 
 function start() {
-    tomarLargo();
-    tomarAncho();
+   capturaDatos();
     dibujarHuerto();
     guardarDatos();
 
