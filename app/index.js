@@ -49,13 +49,20 @@ function dibujarHuerto() {
     boton.remove();
   }
   
+function guardarDatos(){
+  
+  localStorage.setItem("Largo del huerto", largo);
+  localStorage.setItem("Ancho del huerto", ancho);
+  localStorage.setItem("Largo del huerto", area);
 
+}
 
 
 function start() {
     tomarLargo();
     tomarAncho();
     dibujarHuerto();
+    guardarDatos();
 
 }
 
