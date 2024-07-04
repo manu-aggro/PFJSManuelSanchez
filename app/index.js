@@ -16,9 +16,11 @@ function dibujarHuerto() {
   
     for (var i = 0; i < ancho; i++) {
       var hilera = document.createElement("tr");
+      
   
       for (var j = 0; j < largo; j++) {
         var celda = document.createElement("td");
+        celda.id=`${i}-${j}`
         hilera.appendChild(celda);
       }
   
@@ -41,10 +43,15 @@ function guardarDatos(){
 
 }
 
+function plantar(){
+  document.getElementById("1-3").style.backgroundImage = "url(../assets/tomatoe.jpg)"
+}
+
 
 function start() {
    capturaDatos();
     dibujarHuerto();
+    plantar();
     guardarDatos();
 
 }
