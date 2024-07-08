@@ -100,7 +100,6 @@ function plantar() {
     document.getElementById(`${index + terrenoocupado3}`).style.backgroundImage = "url(./assets/lechuga-soil.png)";
 
 
-
   }
 
 
