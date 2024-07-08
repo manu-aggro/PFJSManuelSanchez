@@ -27,6 +27,11 @@ function dibujarHuerto() {
 
   var tabla = document.createElement("table");
   var tblBody = document.createElement("tbody");
+  var button = document.createElement("button");
+
+  button.setAttribute("id", "botondesiembra");
+  button.innerText = "Vamos a recoger la cosecha";
+  button.addEventListener("click", calcularCosecha);
 
   for (var i = 0; i < ancho; i++) {
     var hilera = document.createElement("tr");
@@ -40,7 +45,7 @@ function dibujarHuerto() {
 
     tblBody.appendChild(hilera);
   }
-
+  body.appendChild(button)
   tabla.appendChild(tblBody);
   body.appendChild(tabla);
   const h3 = document.getElementById("subtitulo");
@@ -51,13 +56,23 @@ function dibujarHuerto() {
 
 function guardarDatos() {
 
-  localStorage.setItem("Largo del huerto", largo);
-  localStorage.setItem("Ancho del huerto", ancho);
-  localStorage.setItem("Largo del huerto", area);
-  localStorage.setItem("Numero de tomateras", numerodetomateras);
-  localStorage.setItem("Numero de berenjenas", numerodeberenjenas);
-  localStorage.setItem("Numero de calabazas", numerodeberenjenas);
-  localStorage.setItem("Numero de lechugas", numerodelechugas);
+  try {
+
+    localStorage.setItem("Largo del huerto", largo);
+    localStorage.setItem("Ancho del huerto", ancho);
+    localStorage.setItem("Largo del huerto", area);
+    localStorage.setItem("Numero de tomateras", numerodetomateras);
+    localStorage.setItem("Numero de berenjenas", numerodeberenjenas);
+    localStorage.setItem("Numero de calabazas", numerodeberenjenas);
+    localStorage.setItem("Numero de lechugas", numerodelechugas);
+
+  } catch (error) {
+
+    alert("oooops! Algo ha fallado");
+
+  }
+
+
 
 }
 
@@ -93,6 +108,7 @@ function plantar() {
 }
 
 
+
 function start() {
   capturaDatos();
   dibujarHuerto();
@@ -101,6 +117,37 @@ function start() {
 
 }
 
+async function calcularCosecha() {
+  try {
+    const response = await fetch("./verduras.json");
+    const data = await response.json();
+    console.log(data);
+    let tomateProductividad = data[0].productividad;
+    let berenjenaProductividad = data[1].productividad;
+    let calabazaProductividad = data[2].productividad;
+    let lechugaProductividad = data[3].productividad;
+
+    var divcosecha = document.getElementById("divcosecha");
+    divcosecha.style.backgroundColor = "black"
+    divcosecha.style.margin = "2em"
+    divcosecha.style.padding = "2em"
+    divcosecha.style.color = "white"
+    divcosecha.style.textAlign = "center"
+    divcosecha.innerHTML = `La produccion de tomates es de ${tomateProductividad * numerodetomateras} kg<br>
+      La produccion de berenjenas es de ${berenjenaProductividad * numerodeberenjenas} kg<br>
+      La produccion de calabazas es de ${calabazaProductividad * numerodecalabazas} kg<br>
+      La produccion de lechugas es de ${lechugaProductividad * numerodelechugas} kg<br>
+      ENHORABUENA!
+      `
+    document.body.insertBefore(divcosecha, button);
+
+
+
+  }
+  catch (error) {
+    console.log("Error: " + error);
+  }
+}
 
 
 

@@ -1,0 +1,29 @@
+[
+    
+      {
+        "nombre": "tomate",
+        "alturaMax": 170,
+        "productividad": 10,
+        "periodovital": 120
+      },
+      {
+        "nombre":"Berenjena",
+        "altura": 60,
+        "productividad": 5,
+        "periodovital": 120
+      },
+      {
+        "nombre": "Calabaza",
+        "altura": 2500,
+        "productividad": 20,
+        "periodovital": 120
+      },
+      {
+        "nombre": "Lechuga",
+        "altura":15,
+        "productividad": 1,
+        "periodovital": 60
+      }
+    
+]
+    
