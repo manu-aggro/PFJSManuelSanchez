@@ -79,25 +79,25 @@ function guardarDatos() {
 function plantar() {
 
   for (let index = 0; index < 3 * numerodetomateras; index += 3) {
-    document.getElementById(`${index}`).style.backgroundImage = "url(../assets/tomate-soil.jpg)";
+    document.getElementById(`${index}`).style.backgroundImage = "url(./assets/tomate-soil.jpg)";
     terrenoocupado = 3 * numerodetomateras
 
 
   }
   for (let index = 0; index < 3 * numerodeberenjenas; index += 3) {
-    document.getElementById(`${index + terrenoocupado}`).style.backgroundImage = "url(../assets/berenjena-soil.png)";
+    document.getElementById(`${index + terrenoocupado}`).style.backgroundImage = "url(./assets/berenjena-soil.png)";
 
     terrenoocupado2 = 3 * numerodeberenjenas + terrenoocupado
 
   }
   for (let index = 0; index < 4 * numerodecalabazas; index += 4) {
-    document.getElementById(`${index + terrenoocupado2}`).style.backgroundImage = "url(../assets/calabaza-soil.png)";
+    document.getElementById(`${index + terrenoocupado2}`).style.backgroundImage = "url(./assets/calabaza-soil.png)";
 
     terrenoocupado3 = 4 * numerodecalabazas + terrenoocupado2
 
   }
   for (let index = 0; index < 1 * numerodelechugas; index += 1) {
-    document.getElementById(`${index + terrenoocupado3}`).style.backgroundImage = "url(../assets/lechuga-soil.png)";
+    document.getElementById(`${index + terrenoocupado3}`).style.backgroundImage = "url(./assets/lechuga-soil.png)";
 
 
 
